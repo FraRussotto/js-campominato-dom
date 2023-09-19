@@ -9,7 +9,7 @@ let numberSquare;
 
 playBtn.addEventListener('click', play);
 
-const positionBomb = [];
+let positionBomb = [];
 
 // ----- Function ----- //
 
@@ -28,7 +28,9 @@ function generatePlayGrid(){
 
   for(let i = 0; i < numberSquare; i++) {
     const square = createSquare(i);
-    if(square._squareID === positionBomb[i]) square.classList.add('bomb')
+    if(positionBomb.includes(i)){
+      square.classList.add('bomb')
+    } 
     console.log(square)
     grid.append(square)
   }
@@ -47,17 +49,35 @@ function createSquare(index){
 }
 
 function hendlerClickSquare(){
-  this.classList.add('clicked');
+
+  let flag = true;
+  let point = 0;
+  do{
+    if(this.classList.contains('bomb')){
+      console.log('hai perso')
+      flag = false;
+    }else{
+      this.classList.add('clicked');
+      this.removeEventListener('click', hendlerClickSquare);
+      point++;
+    }
+
+  }
+  while(flag === false)
 }
 
 function reset(){
-  main.innerHTML = ''; 
+  main.innerHTML = '';
+  positionBomb = [];
 }
 
 function randomListBomb(index){
-  for(let i = 0; i <= 16; i++){
+  while(positionBomb.length < 16){
     let randomNum = Math.ceil(Math.random() * index);
-    if(!positionBomb.includes(randomNum)) positionBomb.push(randomNum)
+    if(!positionBomb.includes(randomNum)) {
+      positionBomb.push(randomNum);
+    } 
+
   }
   return positionBomb;
 }
