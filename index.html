@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.2/css/bootstrap.css" integrity="sha512-r0fo0kMK8myZfuKWk9b6yY8azUnHCPhgNz/uWDl2rtMdWJlk7gmd9socvGZdZzICwAkMgfTkVrplDahQ07Gi0A==" crossorigin="anonymous"/>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <title>Campo minato</title>
+</head>
+<body>
+  <div class="main_wrapper d-flex flex-column">
+    <header class="container">
+      <div class="row">
+
+        <div class="col">
+          <div class="logo d-flex align-items-center py-3">
+            logo
+            <span>Campo minato</span>
+          </div>
+        </div>
+
+        <div class="col d-flex align-items-center py-3">
+          <label for="level">Livello: </label>
+          <select class="form-select" name="level" id="level">
+            <option value="0" selected>Easy</option>
+            <option value="1" selected>Medium</option>
+            <option value="2" selected>Hard</option>
+          </select>
+          <button type="button" id="play" class="btn btn-secondary">Play</button>
+        </div>        
+      </div>
+    </header>
+
+    <main class="d-flex justify-content-center align-items-center flex-column">
+
+      <div class="game_wrapper">
+        <h1>Seleziona un livello e gioca</h1>
+      </div>
+
+    </main>
+  </div>
+  <script src="js/script.js"></script>
+</body>
+</html>
