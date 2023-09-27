@@ -17,6 +17,7 @@ let numberSquare;
 
 let positionBombs = [];
 const numBombs = 16;
+const endGameMessagge = document.querySelector('#endGameMessagge');
 
 let points = 0;
 
@@ -86,6 +87,10 @@ function endGame(isWin){
   const stop = document.createElement('div');
   stop.className = 'stop';
   main.append(stop);
+  endGameMessagge.innerHTML = `Hai totalizzato ${points} punti!`
+  stop.append(endGameMessagge);
+  endGameMessagge.classList.add(endGameMessagge)
+
 }
 
 //6. Creo una funzione da utilizzare in endGame che mi fa visualizzare tutte le bombe, ciclando tutte le celle e verificando se il loro index è contenuto in positionBombs.
@@ -101,5 +106,5 @@ function revealBombs(){
 
 function reset(){
   main.innerHTML = '';
-  positionBomb = [];
+  positionBombs = [];
 }
