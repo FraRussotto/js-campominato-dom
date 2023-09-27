@@ -107,4 +107,5 @@ function revealBombs(){
 function reset(){
   main.innerHTML = '';
   positionBombs = [];
+  points = 0;
 }
